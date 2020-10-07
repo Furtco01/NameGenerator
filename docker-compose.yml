@@ -1,0 +1,10 @@
+# Docker-Compose Version
+version: "3.7"
+
+# Declare Top-Level Services
+services:
+  # Bring in our web-app
+  web:
+    build: .
+    image: 
+      name_generator:latest
