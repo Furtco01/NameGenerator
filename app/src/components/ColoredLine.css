@@ -1,0 +1,16 @@
+/***********************************************************************
+@file     Homepage.css
+@author   Collin Furth
+@date     10/07/2020
+@brief
+  See `ColoredLine.js` for details.
+***********************************************************************/
+
+.HorizontalLine {
+    position: absolute;
+    background-color:#C4C4C4;
+    width: 1200px;
+    height: 2px;
+    left: 120px;
+    top: 60px;
+}

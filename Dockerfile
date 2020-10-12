@@ -8,7 +8,7 @@ RUN apt-get -y update
 RUN apt-get -y install vim less
 
 RUN yarn
-RUN yarn upgrade
+#RUN yarn upgrade
 RUN yarn build name_generator
 
 ENV CI true

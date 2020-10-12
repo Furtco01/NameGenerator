@@ -1,0 +1,93 @@
+/***********************************************************************
+@file     Homepage.css
+@author   Collin Furth
+@date     10/07/2020
+@brief
+  See `Homepage.js` for details.
+***********************************************************************/
+
+.Homepage {
+  position: absolute;
+}
+
+.Background {
+  /* Background Image */
+  /*background-image: url("../img/landingPagePhoto.jpg");*/
+  position: absolute;
+  color: rgba(74, 73, 118, 0.26);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.Header {
+  position: absolute;
+  text-align: center;
+  /* Font Settings */
+  color: #E3EAF2;
+  font-family: Rationale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 56px;
+  line-height: 65px;
+}
+
+.Homepage .Background .ButtonGroup {
+  position: relative;
+  text-align: center;
+  width: 140px;
+  height: 104px;
+  left: 630px;
+  top: 40px;
+  border-radius: 12px;
+  line-height: 56px;
+}
+
+.Homepage .Background .ButtonGroup .FirstToggle {
+  position: relative;
+  text-align: center;
+  height: 48px;
+}
+
+.Homepage .Background .ButtonGroup .FirstToggle .FirstToggleText {
+  float: right;
+  text-align: center;
+}
+
+.Homepage .Background .ButtonGroup .SecondToggle {
+  position: relative;
+  text-align: center;
+  height: 48px;
+}
+
+.Homepage .Background .ButtonGroup .SecondToggle .SecondToggleText {
+  float: right;
+  height: 48px;
+  text-align: center;
+}
+
+.Homepage .Background .Button {
+  position: absolute;
+  width: 164px;
+  height: 40px;
+  left: 628px;
+  top: 460px;
+  color: #3682C8;
+}
+
+.Homepage .Background .Button:hover {
+  color: #03417B;
+}
+
+.Homepage .Background .Button:disabled {
+  color: #ABAEB0;
+}
+
+.Homepage .Background .TextField {
+  position: absolute;
+  left: 576px;
+  top: 556px;
+  color: #3682C8;
+}
