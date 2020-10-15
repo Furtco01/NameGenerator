@@ -12,12 +12,12 @@
 ***********************************************************************/
 
 import React from 'react';
-import Homepage from './components/Homepage.js';
+import HomepageHooks from './components/Homepage_hooks.js';
 import './App.css';
 
 const App = () => (
   <main className="App">
-    <Homepage />
+    <HomepageHooks />
   </main>
 );
 

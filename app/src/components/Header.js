@@ -13,13 +13,13 @@ import React from 'react';
 import ColoredLine from './ColoredLine';
 import './Header.css';
 
-const Header = () => (
+const Header = (props) => (
     <div className="Banner">
         <div className="Header">
-            Name Generator
+            {props.appName}
             <ColoredLine />
             <div className="Greeting">
-            Take a spin on my cute little name generator. Please select either Male or Female and Short or Long before generating a name.
+            {props.appGreeting}
             </div>
         </div>
     </div>

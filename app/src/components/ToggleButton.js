@@ -5,6 +5,7 @@ import { ToggleButtonGroup } from '@material-ui/lab';
 export default function ToggleButtons() {
   const [alignment, setAlignment] = React.useState('left');
 
+
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
@@ -16,10 +17,10 @@ export default function ToggleButtons() {
       onChange={handleAlignment}
       aria-label="text alignment"
     >
-      <ToggleButton value="left" aria-label="left aligned">
+      <ToggleButton value="left" sex="male" aria-label="left aligned">
         Male
       </ToggleButton>
-      <ToggleButton value="right" aria-label="right aligned">
+      <ToggleButton value="right" sex="female" aria-label="right aligned">
         Female
       </ToggleButton>
     </ToggleButtonGroup>
