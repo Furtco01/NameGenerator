@@ -12,7 +12,7 @@
 ***********************************************************************/
 
 import React from 'react';
-import HomepageHooks from './components/Homepage_hooks.js';
+import HomepageHooks from './components/HomepageHooks.js';
 import './App.css';
 
 const App = () => (

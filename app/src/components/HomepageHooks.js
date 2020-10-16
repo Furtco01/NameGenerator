@@ -1,5 +1,5 @@
 /***********************************************************************
-@file     Homepage.js
+@file     HomepageHooks.js
 @author   Collin Furth
 @date     10/07/2020
 @ver      0.1
@@ -42,7 +42,7 @@ const GenderToggle = () => {
     const homepageText = {
     helperText: {
         firstSelection: 'First Selection is ',
-        secondSelection: 'Second Selection is'
+        secondSelection: 'Second Selection is '
     },
     resultText: 'NAME GENERATED HERE',
     buttonText: 'Generate Name'
@@ -79,6 +79,7 @@ const GenderToggle = () => {
     else
         alert('Please set a gender!')
     */
+   
 
     return (
         <div className="Homepage">
