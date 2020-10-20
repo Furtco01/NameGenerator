@@ -2,9 +2,8 @@ import React from 'react';
 import { ToggleButton } from '@material-ui/lab';
 import { ToggleButtonGroup } from '@material-ui/lab';
 
-export default function genderToggle() {
+export default function NameToggle(props) {
   const [alignment, setAlignment] = React.useState('left');
-
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -19,10 +18,10 @@ export default function genderToggle() {
       aria-label="text alignment"
     >
       <ToggleButton value="left" aria-label="left aligned">
-        Male
+        Long
       </ToggleButton>
       <ToggleButton value="right" aria-label="right aligned">
-        Female
+        Short
       </ToggleButton>
     </ToggleButtonGroup>
   );

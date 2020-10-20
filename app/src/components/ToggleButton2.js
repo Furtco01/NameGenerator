@@ -2,11 +2,12 @@ import React from 'react';
 import { ToggleButton } from '@material-ui/lab';
 import { ToggleButtonGroup } from '@material-ui/lab';
 
-export default function ToggleButtons() {
+export default function NameToggle() {
   const [alignment, setAlignment] = React.useState('left');
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
+    props.onClick();
   };
 
   return (

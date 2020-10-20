@@ -2,7 +2,7 @@ import React from 'react';
 import { ToggleButton } from '@material-ui/lab';
 import { ToggleButtonGroup } from '@material-ui/lab';
 
-export default function genderToggle() {
+export default function GenderToggle(props) {
   const [alignment, setAlignment] = React.useState('left');
 
 

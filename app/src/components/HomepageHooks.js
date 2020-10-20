@@ -12,34 +12,44 @@
 import React from 'react';
 import Header from './Header.js';
 import './Homepage.css';
-import ToggleButton from './ToggleButton.js';
-import ToggleButton2 from './ToggleButton2.js';
+import GenderToggle from './GenderToggle.js';
+import NameToggle from './NameToggle.js';
 import { Button } from '@material-ui/core';
+//import { render } from '@testing-library/react';
 
-const GenderToggle = () => {
-    
-    const [gender, setGender] = React.useState('male');
-    const [length, setLength] = React.useState('long');
+class HomePage extends React.Component {
 
-    const myRequest = new Request('http://localhost:4200/get', {
+    //Declares the initial state of these variables using hooks
+
+    //const [gender, setGender] = React.useState('male');
+    //const [length, setLength] = React.useState('long');
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            gender: 'male',
+            length: 'long'
+        };
+    };
+
+    myRequest = new Request('http://localhost:4200/get', {
     method: 'GET',
     mode: 'cors'
     });
 
-    function generateName(e) {
-    e.preventDefault();
-    fetch(myRequest)
-    .then(function(data) {
-        console.log('Made it')
-        console.log(data);
-        document.getElementById('result').innerHTML = `This is your output: ${data}`;
-    })
-    .catch(function(error) {
-        console.log(error);
-    });
+    generateName() {
+        fetch(this.myRequest)
+        .then(function(data) {
+            console.log('Made it')
+            console.log(data);
+            document.getElementById('result').innerHTML = `This is your output: ${data}`;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
     }
 
-    const homepageText = {
+    homepageText = {
     helperText: {
         firstSelection: 'First Selection is ',
         secondSelection: 'Second Selection is '
@@ -48,60 +58,75 @@ const GenderToggle = () => {
     buttonText: 'Generate Name'
     }
 
-    function setSex() {
-        if(gender === 'male') {
-            gender = 'female';
+    handleGenderToggle() {
+        if(this.state.gender === 'male') {
+            this.setState = ({gender: 'female'});
         }
-        else if(gender === 'female') {
-            gender = 'male';
+        else if(this.state.gender === 'female') {
+            this.setState = ({gender: 'male'});
         }
         else
             alert('Please select a gender!');
+    }
+
+    handleNameToggle() {
+        if(this.state.length === 'long') {
+            this.setState = ({length: 'short'});
+        }
+        else if(this.state.length === 'short') {
+            this.setState = ({length: 'long'});
+        }
+        else
+            alert('Please select a length!');
+    }
+
+
+    //functions to set state on toggles using hooks
+
+    /*function setSex(alignment) {
+        //const _gender = {...gender}
+        if(alignment === 'male') {
+            setGender({gender: 'female'});
+        }
+        else if(alignment === 'female') {
+            setGender({gender: 'male'});
+        }
     }
 
     function setNameLength() {
-        if(length=== 'long') {
-            length = 'short';
+        if(length === 'long') {
+            setLength('short');
         }
         else if(length === 'female') {
-            length = 'male';
+            setLength('male');
         }
         else
             alert('Please select a gender!');
-    }
-
-    /*if (gender === 'male') {
-        setGender();
-    }
-    else if(gender === 'female') {
-        setGender();
-    }
-    else
-        alert('Please set a gender!')
-    */
+    }*/
    
-
-    return (
-        <div className="Homepage">
-        <div className="Background">
-        <Header appName='Name Generator' appGreeting='Take a spin on my cute little name generator. Please select either Male or Female and Short or Long before generating a name.'/>
-            <div className="ButtonGroup">
-            <div className="FirstToggle">
-                <ToggleButton onClick={() => setGender(setSex())}/>
+    render() {
+        return (
+            <div className="Homepage">
+            <div className="Background">
+            <Header appName='Name Generator' appGreeting='Take a spin on my cute little name generator. Please select either Male or Female and Short or Long before generating a name.'/>
+                <div className="ButtonGroup">
+                <div className="FirstToggle">
+                    <GenderToggle onClick={() => this.handleGenderToggle()}/>
+                </div>
+                <div className="FirstToggleText"> {this.homepageText.helperText.firstSelection + this.state.gender}</div>
+                <div className="SecondToggle">
+                    <NameToggle onClick={() => this.handleNameToggle()}/>
+                </div>
+                <div className="SecondToggleText"> {this.homepageText.helperText.secondSelection + this.state.length} </div>
             </div>
-            <div className="FirstToggleText"> {homepageText.helperText.firstSelection + gender}</div>
-            <div className="SecondToggle">
-                <ToggleButton2 onClick={() => setLength(setNameLength())}/>
+            <div className="Button">
+                <Button variant="contained" color="primary" onClick={this.generateName}> {this.homepageText.buttonText} </Button>
             </div>
-            <div className="SecondToggleText"> {homepageText.helperText.secondSelection + length} </div>
+            <div id="result" className="Result">{this.homepageText.resultText}</div>
+            </div>
         </div>
-        <div className="Button">
-            <Button variant="contained" color="primary" onClick={generateName}> {homepageText.buttonText} </Button>
-        </div>
-        <div id="result" className="Result">{homepageText.resultText}</div>
-        </div>
-    </div>
-    );
-}
+        );
+    }
+};
 
-export default GenderToggle;
+export default HomePage;
