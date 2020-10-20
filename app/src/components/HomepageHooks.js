@@ -17,6 +17,11 @@ import NameToggle from './NameToggle.js';
 import { Button } from '@material-ui/core';
 //import { render } from '@testing-library/react';
 
+const myRequest = new Request('http://localhost:4200/get', {
+    method: 'GET',
+    mode: 'cors'
+    });
+
 class HomePage extends React.Component {
 
     //Declares the initial state of these variables using hooks
@@ -32,13 +37,8 @@ class HomePage extends React.Component {
         };
     };
 
-    myRequest = new Request('http://localhost:4200/get', {
-    method: 'GET',
-    mode: 'cors'
-    });
-
     generateName() {
-        fetch(this.myRequest)
+        fetch(myRequest)
         .then(function(data) {
             console.log('Made it')
             console.log(data);
@@ -59,25 +59,25 @@ class HomePage extends React.Component {
     }
 
     handleGenderToggle() {
-        if(this.state.gender === 'male') {
+        if( this.state.gender === 'male' ) {
             this.setState = ({gender: 'female'});
         }
-        else if(this.state.gender === 'female') {
-            this.setState = ({gender: 'male'});
+        else if( this.state.gender === 'female' ) {
+            this.setState = ({ gender: 'male' });
         }
         else
-            alert('Please select a gender!');
+            alert( 'Please select a gender!' );
     }
 
     handleNameToggle() {
-        if(this.state.length === 'long') {
+        if( this.state.length === 'long' ) {
             this.setState = ({length: 'short'});
         }
-        else if(this.state.length === 'short') {
-            this.setState = ({length: 'long'});
+        else if( this.state.length === 'short' ) {
+            this.setState = ({ length: 'long' });
         }
         else
-            alert('Please select a length!');
+            alert( 'Please select a length!' );
     }
 
 

@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const cors = require('cors')
 const execFile = require('child_process').execFile;
 const port = 4200;
 
