@@ -21,6 +21,10 @@ diverse_male_first_names = ["Alasdair", "Kit", "Taj", "Beckett","Eli", "Caspar",
 #Array containing diverse names
 diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Bay", "Ada", "Sia","Camilla", "Constance", "Dot", "Bea", "Elektra", "Fay", "Fabiola","Gisele", "Liv", "Nya", "Jemima","Sky", "Lux", "Leela","Lila Grace","Ula","Olympia","Pax","Zoe"]
 
+#initialize gender and name length variables
+
+gender = ''
+name_length = ''
 
 def name_generator(gender,name_length):
     if gender == 'man':
@@ -110,7 +114,10 @@ def name_generator(gender,name_length):
                 last_name = last_female_name
     print(first_name, last_name)
 
-name_generator('man','long')
+#####Commented out function call to allow subprocess to call python file with user selected values
+
+#name_generator('woman', 'short')
+#name_generator(gender,name_length)
 
 #####
 #Helper funciton to count items in name arrays

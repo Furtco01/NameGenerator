@@ -15,32 +15,44 @@ import './Homepage.css';
 import GenderToggle from './GenderToggle.js';
 import NameToggle from './NameToggle.js';
 import { Button } from '@material-ui/core';
-//import { render } from '@testing-library/react';
 
-const myRequest = new Request('http://localhost:4200/get', {
-    method: 'GET',
-    mode: 'cors'
+function getToggleProps() {
+    console.log('running function');
+    const myRequest = new Request('http://localhost:4200/get', {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+            'Accept': 'application/json'
+        }
     });
 
+    //console.log(props.gender);
+    fetch(myRequest)
+        .then(function(data) {
+        console.log(data);
+        document.getElementById('result').innerHTML = `This is your output: ${data}`;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+        
+}
+
+
 class HomePage extends React.Component {
-
-    //Declares the initial state of these variables using hooks
-
-    //const [gender, setGender] = React.useState('male');
-    //const [length, setLength] = React.useState('long');
 
     constructor(props) {
         super(props);
         this.state = {
-            gender: 'male',
-            length: 'long'
+            gender: 'Male',
+            length: 'Long'
         };
     };
 
-    generateName() {
+    /*generateName() {
         fetch(myRequest)
         .then(function(data) {
-            console.log('Made it')
+            //console.log('Made it')
             console.log(data);
             document.getElementById('result').innerHTML = `This is your output: ${data}`;
         })
@@ -48,6 +60,7 @@ class HomePage extends React.Component {
             console.log(error);
         });
     }
+    */
 
     homepageText = {
     helperText: {
@@ -58,51 +71,28 @@ class HomePage extends React.Component {
     buttonText: 'Generate Name'
     }
 
+
     handleGenderToggle() {
-        if( this.state.gender === 'male' ) {
-            this.setState = ({gender: 'female'});
+        if( this.state.gender === 'Male' ) {
+            this.setState({gender: 'Female'});
         }
-        else if( this.state.gender === 'female' ) {
-            this.setState = ({ gender: 'male' });
+        else if( this.state.gender === 'Female' ) {
+            this.setState({ gender: 'Male' });
         }
         else
             alert( 'Please select a gender!' );
     }
 
     handleNameToggle() {
-        if( this.state.length === 'long' ) {
-            this.setState = ({length: 'short'});
+        if( this.state.length === 'Long' ) {
+            this.setState({length: 'Short'});
         }
-        else if( this.state.length === 'short' ) {
-            this.setState = ({ length: 'long' });
+        else if( this.state.length === 'Short' ) {
+            this.setState({ length: 'Long' });
         }
         else
             alert( 'Please select a length!' );
     }
-
-
-    //functions to set state on toggles using hooks
-
-    /*function setSex(alignment) {
-        //const _gender = {...gender}
-        if(alignment === 'male') {
-            setGender({gender: 'female'});
-        }
-        else if(alignment === 'female') {
-            setGender({gender: 'male'});
-        }
-    }
-
-    function setNameLength() {
-        if(length === 'long') {
-            setLength('short');
-        }
-        else if(length === 'female') {
-            setLength('male');
-        }
-        else
-            alert('Please select a gender!');
-    }*/
    
     render() {
         return (
@@ -120,7 +110,7 @@ class HomePage extends React.Component {
                 <div className="SecondToggleText"> {this.homepageText.helperText.secondSelection + this.state.length} </div>
             </div>
             <div className="Button">
-                <Button variant="contained" color="primary" onClick={this.generateName}> {this.homepageText.buttonText} </Button>
+                <Button variant="contained" color="primary" onClick={getToggleProps}> {this.homepageText.buttonText} </Button>
             </div>
             <div id="result" className="Result">{this.homepageText.resultText}</div>
             </div>

@@ -15,10 +15,23 @@ import React from 'react';
 import HomePage from './components/HomepageHooks.js';
 import './App.css';
 
-const App = () => (
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        gender: 'Male',
+        length: 'Long'
+    };
+  };
+
+  render() {
+    return (
   <main className="App">
-    <HomePage />
+    <HomePage gender = {this.state.gender} length = {this.state.length}/>
   </main>
-);
+    );
+  }
+}
 
 export default App;
