@@ -1,7 +1,8 @@
 #Name Generator application
 
-#import random library
+#imports
 import random
+import sys
 
 #Array containing male first names list
 male_first_names = ["James","Jon","Rob","Michael","William","David","Richard","Joseph","Thomas","Charles","Christopher","Dan","Matthew","Anthony","Donald","Mark","Paul","Steven","Andrew","Kenneth","Joshua","Kevin","Brian","George","Edward","Ronald","Tim","Jason","Jeffrey","Ryan","Jacob","Gary"]
@@ -23,10 +24,11 @@ diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Ba
 
 #initialize gender and name length variables
 
-gender = ''
-name_length = ''
+gender = sys.argv[1]
+name_length = sys.argv[2]
 
 def name_generator(gender,name_length):
+
     if gender == 'man':
         first_name_letter_count = 0
         last_name_letter_count = 0
@@ -117,7 +119,8 @@ def name_generator(gender,name_length):
 #####Commented out function call to allow subprocess to call python file with user selected values
 
 #name_generator('woman', 'short')
-#name_generator(gender,name_length)
+
+name_generator(gender,name_length)
 
 #####
 #Helper funciton to count items in name arrays

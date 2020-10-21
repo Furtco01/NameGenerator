@@ -16,26 +16,28 @@ import GenderToggle from './GenderToggle.js';
 import NameToggle from './NameToggle.js';
 import { Button } from '@material-ui/core';
 
-function getToggleProps() {
+function generateName() {
     console.log('running function');
     const myRequest = new Request('http://localhost:4200/get', {
-        method: 'GET',
+        method: 'POST',
         mode: 'cors',
         headers: {
-            'Accept': 'application/json'
-        }
+            'Accept': 'text/plain'
+        },
+        body: JSON.stringify({gender: 'female', name_length: 'short'
+    })
     });
-
-    //console.log(props.gender);
+    console.log(myRequest);
     fetch(myRequest)
-        .then(function(data) {
+    .then(function(data) {
+        return data.JSON().then(function(data) {
         console.log(data);
         document.getElementById('result').innerHTML = `This is your output: ${data}`;
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
-        
+    })
+    .catch(function(error) {
+        console.log(error);
+    });  
+    })
 }
 
 
@@ -110,7 +112,7 @@ class HomePage extends React.Component {
                 <div className="SecondToggleText"> {this.homepageText.helperText.secondSelection + this.state.length} </div>
             </div>
             <div className="Button">
-                <Button variant="contained" color="primary" onClick={getToggleProps}> {this.homepageText.buttonText} </Button>
+                <Button variant="contained" color="primary" onClick={generateName}> {this.homepageText.buttonText} </Button>
             </div>
             <div id="result" className="Result">{this.homepageText.resultText}</div>
             </div>
