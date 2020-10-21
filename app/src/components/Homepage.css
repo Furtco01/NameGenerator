@@ -30,7 +30,7 @@
   font-family: Rationale;
   font-style: normal;
   font-weight: normal;
-  font-size: 56px;
+  font-size: 52px;
   line-height: 65px;
 }
 
@@ -42,38 +42,49 @@
   left: 630px;
   top: 40px;
   border-radius: 12px;
-  line-height: 56px;
+  line-height: 28px;
 }
 
 .Homepage .Background .ButtonGroup .FirstToggle {
   position: relative;
   text-align: center;
   height: 48px;
+  left: 90px;
+  margin-bottom: 18px;
 }
 
-.Homepage .Background .ButtonGroup .FirstToggle .FirstToggleText {
-  float: right;
-  text-align: center;
+.Homepage .Background .ButtonGroup .FirstToggleText {
+  position: absolute;
+  right: 38px;
+  bottom: 70px;
+  width: 264px;
+  height: 28px;
+  font-size: 24px;
+
 }
 
 .Homepage .Background .ButtonGroup .SecondToggle {
-  position: relative;
+  position: absolute;
   text-align: center;
   height: 48px;
+  left: 90px;
 }
 
-.Homepage .Background .ButtonGroup .SecondToggle .SecondToggleText {
-  float: right;
-  height: 48px;
-  text-align: center;
+.Homepage .Background .ButtonGroup .SecondToggleText {
+  position: absolute;
+  right: 40px;
+  bottom: 8px;
+  width: 264px;
+  height: 28px;
+  font-size: 24px;
 }
 
 .Homepage .Background .Button {
   position: absolute;
   width: 164px;
   height: 40px;
-  left: 628px;
-  top: 570px;
+  left: 616px;
+  top: 372px;
   color: #3682C8;
 }
 
@@ -87,8 +98,9 @@
 
 .Homepage .Background .Result {
   position: absolute;
-  left: 612px;
-  top: 656px;
+  left: 500px;
+  top: 436px;
+  font-size: 32px;
   color: #3682C8;
   
 }

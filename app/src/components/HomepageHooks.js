@@ -66,8 +66,8 @@ class HomePage extends React.Component {
 
     homepageText = {
     helperText: {
-        firstSelection: 'First Selection is ',
-        secondSelection: 'Second Selection is '
+        firstSelection: 'Please select a gender',
+        secondSelection: 'Please select a length'
     },
     resultText: 'NAME GENERATED HERE',
     buttonText: 'Generate Name'
@@ -100,16 +100,16 @@ class HomePage extends React.Component {
         return (
             <div className="Homepage">
             <div className="Background">
-            <Header appName='Name Generator' appGreeting='Take a spin on my cute little name generator. Please select either Male or Female and Short or Long before generating a name.'/>
+            <Header appName='Name Generator' appGreeting='Take a spin on my cute little name generator. Please select either MALE or FEMALE and SHORT or LONG before generating a name.'/>
                 <div className="ButtonGroup">
                 <div className="FirstToggle">
                     <GenderToggle onClick={() => this.handleGenderToggle()}/>
                 </div>
-                <div className="FirstToggleText"> {this.homepageText.helperText.firstSelection + this.state.gender}</div>
+                <div className="FirstToggleText"> {this.homepageText.helperText.firstSelection}</div>
                 <div className="SecondToggle">
                     <NameToggle onClick={() => this.handleNameToggle()}/>
                 </div>
-                <div className="SecondToggleText"> {this.homepageText.helperText.secondSelection + this.state.length} </div>
+                <div className="SecondToggleText"> {this.homepageText.helperText.secondSelection} </div>
             </div>
             <div className="Button">
                 <Button variant="contained" color="primary" onClick={generateName}> {this.homepageText.buttonText} </Button>
