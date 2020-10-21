@@ -8,12 +8,10 @@
 
 .Homepage {
   position: absolute;
+  overflow: hidden;
 }
 
-.Background {
-  /* Background Image */
-  /*background-image: url("../img/landingPagePhoto.jpg");*/
-  position: absolute;
+.Homepage .Background {
   color: rgba(74, 73, 118, 0.26);
   background-position: center;
   background-repeat: no-repeat;
@@ -22,70 +20,20 @@
   width: 100vw;
 }
 
-.Header {
-  position: absolute;
+.ButtonGroup {
   text-align: center;
-  /* Font Settings */
-  color: #E3EAF2;
-  font-family: Rationale;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 52px;
-  line-height: 65px;
-}
-
-.Homepage .Background .ButtonGroup {
-  position: relative;
-  text-align: center;
-  width: 140px;
-  height: 104px;
-  left: 630px;
-  top: 40px;
-  border-radius: 12px;
-  line-height: 28px;
-}
-
-.Homepage .Background .ButtonGroup .FirstToggle {
-  position: relative;
-  text-align: center;
-  height: 48px;
-  left: 90px;
-  margin-bottom: 18px;
-}
-
-.Homepage .Background .ButtonGroup .FirstToggleText {
-  position: absolute;
-  right: 38px;
-  bottom: 70px;
-  width: 264px;
-  height: 28px;
   font-size: 24px;
-
+  padding-top: 2%;
 }
 
-.Homepage .Background .ButtonGroup .SecondToggle {
-  position: absolute;
-  text-align: center;
-  height: 48px;
-  left: 90px;
+.FirstToggleGroup {
+  padding-right: 2%;
+  padding-bottom: 2%;
 }
 
-.Homepage .Background .ButtonGroup .SecondToggleText {
-  position: absolute;
-  right: 40px;
-  bottom: 8px;
-  width: 264px;
-  height: 28px;
-  font-size: 24px;
-}
-
-.Homepage .Background .Button {
-  position: absolute;
-  width: 164px;
-  height: 40px;
-  left: 616px;
-  top: 372px;
-  color: #3682C8;
+.SecondToggleGroup {
+  padding-right: 2%;
+  padding-bottom: 2%;
 }
 
 .Homepage .Background .Button:hover {
@@ -96,10 +44,8 @@
   color: #ABAEB0;
 }
 
-.Homepage .Background .Result {
-  position: absolute;
-  left: 500px;
-  top: 436px;
+.Result {
+  padding-top: 2%;
   font-size: 32px;
   color: #3682C8;
   

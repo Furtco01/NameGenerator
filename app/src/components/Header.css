@@ -5,17 +5,13 @@
 @brief
   See `Homepage.js` for details.
 ***********************************************************************/
-.Background .Banner {
-    position: relative;
-    width: 100vw;
+.Banner {
+    text-align: center;
+    width: 1440px;
     height: 200px;
-    bottom: 8px;
     background-color: #3682C8;
 }
-
-.Background .Header {
-    position: relative;
-    text-align: center;
+.Banner .Header {
     /* Font Settings */
     color: #E3EAF2;
     font-family: Rationale;
@@ -25,17 +21,12 @@
     line-height: 64px;
 }
 
-.Greeting {
+.Banner .Greeting {
     position: relative;
     width: 1000px;
-    height: 56px;
     left: 220px;
     top: 60px;
-    font-family: Rationale;
-    font-style: normal;
-    font-weight: normal;
     font-size: 24px;
     line-height: 28px;
-    text-align: center;
     color: #E3EAF2;
 }

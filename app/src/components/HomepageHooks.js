@@ -41,7 +41,7 @@ function generateName() {
 }
 
 
-class HomePage extends React.Component {
+class Homepage extends React.Component {
 
     constructor(props) {
         super(props);
@@ -66,8 +66,8 @@ class HomePage extends React.Component {
 
     homepageText = {
     helperText: {
-        firstSelection: 'Please select a gender:',
-        secondSelection: 'Please select a length:'
+        firstSelection: 'Please select a gender: ',
+        secondSelection: 'Please select a length: '
     },
     resultText: 'NAME GENERATED HERE',
     buttonText: 'Generate Name'
@@ -99,26 +99,24 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="Homepage">
-            <div className="Background">
-            <Header appName='Name Generator' appGreeting='Take a spin on my cute little name generator. Please select either MALE or FEMALE and SHORT or LONG before generating a name.'/>
-                <div className="ButtonGroup">
-                <div className="FirstToggle">
-                    <GenderToggle onClick={() => this.handleGenderToggle()}/>
+                <div className="Background">
+                <Header appName='Name Generator' appGreeting='Take a spin on my cute little name generator. Please select either MALE or FEMALE and SHORT or LONG before generating a name.'/>
+                    <div className="ButtonGroup">
+                        <div className="FirstToggleGroup">
+                            {this.homepageText.helperText.firstSelection}
+                            <GenderToggle onClick={() => this.handleGenderToggle()}/>
+                        </div>
+                        <div className="SecondToggleGroup">
+                            {this.homepageText.helperText.secondSelection}
+                            <NameToggle onClick={() => this.handleNameToggle()}/>
+                        </div>
+                    <Button variant="contained" color="primary" onClick={generateName}> {this.homepageText.buttonText} </Button>
+                    <div className="Result" id="result">{this.homepageText.resultText}</div>
+                    </div>
                 </div>
-                <div className="FirstToggleText"> {this.homepageText.helperText.firstSelection}</div>
-                <div className="SecondToggle">
-                    <NameToggle onClick={() => this.handleNameToggle()}/>
-                </div>
-                <div className="SecondToggleText"> {this.homepageText.helperText.secondSelection} </div>
             </div>
-            <div className="Button">
-                <Button variant="contained" color="primary" onClick={generateName}> {this.homepageText.buttonText} </Button>
-            </div>
-            <div id="result" className="Result">{this.homepageText.resultText}</div>
-            </div>
-        </div>
         );
     }
 };
 
-export default HomePage;
+export default Homepage;

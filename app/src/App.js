@@ -12,7 +12,7 @@
 ***********************************************************************/
 
 import React from 'react';
-import HomePage from './components/HomepageHooks.js';
+import Homepage from './components/HomepageHooks.js';
 import './App.css';
 
 class App extends React.Component {
@@ -27,9 +27,13 @@ class App extends React.Component {
 
   render() {
     return (
-  <main className="App">
-    <HomePage gender = {this.state.gender} length = {this.state.length}/>
-  </main>
+      <html>
+        <body>
+          <main className="App">
+            <Homepage gender = {this.state.gender} length = {this.state.length}/>
+          </main>
+        </body>
+      </html>
     );
   }
 }

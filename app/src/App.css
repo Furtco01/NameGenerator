@@ -8,5 +8,6 @@
 
 /**** Application-Wide CSS ****/
 .App {
-  position: relative;
+  margin-top: -8px;
+  margin-left: -16px;
 }
