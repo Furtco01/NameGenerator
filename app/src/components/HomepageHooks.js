@@ -66,8 +66,8 @@ class HomePage extends React.Component {
 
     homepageText = {
     helperText: {
-        firstSelection: 'Please select a gender',
-        secondSelection: 'Please select a length'
+        firstSelection: 'Please select a gender:',
+        secondSelection: 'Please select a length:'
     },
     resultText: 'NAME GENERATED HERE',
     buttonText: 'Generate Name'
