@@ -20,20 +20,43 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        gender: 'Male',
-        length: 'Long'
-    };
+      gender: 'Male',
+      name_length: 'Long'
   };
+  };
+
+handleGenderToggle = () => {
+  if( this.state.gender === 'Male' ) {
+      this.setState({gender: 'Female'});
+  }
+  else if( this.state.gender === 'Female' ) {
+      this.setState({ gender: 'Male' });
+  }
+  else
+      alert( 'Please select a gender!' );
+}
+
+handleNameToggle = () => {
+  if( this.state.name_length === 'Long' ) {
+      this.setState({name_length: 'Short'});
+  }
+  else if( this.state.name_length === 'Short' ) {
+      this.setState({name_length: 'Long'});
+  }
+  else
+      alert( 'Please select a length!' );
+}
 
   render() {
     return (
-      <html>
-        <body>
           <main className="App">
-            <Homepage gender = {this.state.gender} length = {this.state.length}/>
+            <Homepage
+            gender = {this.state.gender}
+            name_length = {this.state.name_length}
+            genderClick={this.handleGenderToggle}
+            nameClick={this.handleNameToggle}
+            />
           </main>
-        </body>
-      </html>
     );
   }
 }

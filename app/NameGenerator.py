@@ -24,8 +24,8 @@ diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Ba
 
 #initialize gender and name length variables
 
-gender = sys.argv[1]
-name_length = sys.argv[2]
+#gender = 'Male'
+#name_length = 'Long'
 
 def name_generator(gender,name_length):
 
@@ -115,12 +115,12 @@ def name_generator(gender,name_length):
             if last_name_letter_count <= 3 and last_name_letter_count is not None:
                 last_name = last_female_name
     print(first_name, last_name)
+    #print(sys.argv[1], sys.argv[2])
 
 #####Commented out function call to allow subprocess to call python file with user selected values
 
-#name_generator('woman', 'short')
-
-name_generator(gender,name_length)
+name_generator('woman', 'short')
+#name_generator(gender, name_length)
 
 #####
 #Helper funciton to count items in name arrays

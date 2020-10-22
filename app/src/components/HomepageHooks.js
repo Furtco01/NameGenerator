@@ -16,53 +16,45 @@ import GenderToggle from './GenderToggle.js';
 import NameToggle from './NameToggle.js';
 import { Button } from '@material-ui/core';
 
-function generateName() {
-    console.log('running function');
-    const myRequest = new Request('http://localhost:4200/get', {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-            'Accept': 'text/plain'
-        },
-        body: JSON.stringify({gender: 'female', name_length: 'short'
-    })
-    });
-    console.log(myRequest);
-    fetch(myRequest)
-    .then(function(data) {
-        return data.JSON().then(function(data) {
-        console.log(data);
-        document.getElementById('result').innerHTML = `This is your output: ${data}`;
-    })
-    .catch(function(error) {
-        console.log(error);
-    });  
-    })
-}
-
-
 class Homepage extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            gender: 'Male',
-            length: 'Long'
-        };
-    };
-
-    /*generateName() {
+    generateName = () => {
+        console.log('running function');
+        const myRequest = new Request('http://localhost:4200/get', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Accept': 'text/plain'
+                //'Accept': 'application/json'
+                //'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                gender: this.props.gender,
+                name_length: this.props.name_length
+            })
+        });
+        console.log(myRequest);
         fetch(myRequest)
+        .then(res => {
+            if(res.ok) {
+              return res;
+            } else {
+                throw Error(`Request rejected with status ${res.status}`);
+            }
+        })
+        .then(res => res.json())
+        .then(data=>console.log(data));
+        /*.then(function(data) {
+            return data.JSON();
+        })
         .then(function(data) {
-            //console.log('Made it')
             console.log(data);
             document.getElementById('result').innerHTML = `This is your output: ${data}`;
         })
         .catch(function(error) {
             console.log(error);
-        });
-    }
-    */
+        });  */
+    };
 
     homepageText = {
     helperText: {
@@ -71,29 +63,6 @@ class Homepage extends React.Component {
     },
     resultText: 'NAME GENERATED HERE',
     buttonText: 'Generate Name'
-    }
-
-
-    handleGenderToggle() {
-        if( this.state.gender === 'Male' ) {
-            this.setState({gender: 'Female'});
-        }
-        else if( this.state.gender === 'Female' ) {
-            this.setState({ gender: 'Male' });
-        }
-        else
-            alert( 'Please select a gender!' );
-    }
-
-    handleNameToggle() {
-        if( this.state.length === 'Long' ) {
-            this.setState({length: 'Short'});
-        }
-        else if( this.state.length === 'Short' ) {
-            this.setState({ length: 'Long' });
-        }
-        else
-            alert( 'Please select a length!' );
     }
    
     render() {
@@ -104,13 +73,13 @@ class Homepage extends React.Component {
                     <div className="ButtonGroup">
                         <div className="FirstToggleGroup">
                             {this.homepageText.helperText.firstSelection}
-                            <GenderToggle onClick={() => this.handleGenderToggle()}/>
+                            <GenderToggle onClick={() => this.props.genderClick()}/>
                         </div>
                         <div className="SecondToggleGroup">
                             {this.homepageText.helperText.secondSelection}
-                            <NameToggle onClick={() => this.handleNameToggle()}/>
+                            <NameToggle onClick={() => this.props.nameClick()}/>
                         </div>
-                    <Button variant="contained" color="primary" onClick={generateName}> {this.homepageText.buttonText} </Button>
+                    <Button variant="contained" color="primary" onClick={this.generateName}> {this.homepageText.buttonText} </Button>
                     <div className="Result" id="result">{this.homepageText.resultText}</div>
                     </div>
                 </div>
