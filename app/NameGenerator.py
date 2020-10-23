@@ -24,8 +24,8 @@ diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Ba
 
 #initialize gender and name length variables
 
-gender = sys.argv[1]
-name_length = sys.argv[2]
+#gender = sys.argv[1]
+#name_length = sys.argv[2]
 
 def name_generator(gender,name_length):
 

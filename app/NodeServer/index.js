@@ -18,14 +18,9 @@ app.use(function (req, res, next) {
 //Define endpoint for GET request
 app.post('/get', function(req, res) {
   res.json(req.body);
-  console.log(req);
-  console.log(req.body);
-
   var gender = req.body.gender;
   var name_length = req.body.name_length;
-
   const pythonProcess = spawn('python',['../NameGenerator.py', gender, name_length]);
-  console.log(gender, name_length);
   pythonProcess.stdout.on('data', function(data) {
   console.log(data.toString());
   });
