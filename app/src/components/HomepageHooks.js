@@ -25,15 +25,14 @@ class Homepage extends React.Component {
             mode: 'cors',
             headers: {
                 //'Accept': 'text/plain',
-                'Accept': 'application/json'
-                //'Content-type': 'application/json'
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
             },
             body: JSON.stringify({
                 gender: this.props.gender,
                 name_length: this.props.name_length
             })
         });
-        console.log(myRequest);
         fetch(myRequest)
         .then(res => {
             if(res.ok) {
