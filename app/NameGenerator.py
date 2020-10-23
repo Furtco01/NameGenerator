@@ -24,8 +24,8 @@ diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Ba
 
 #initialize gender and name length variables
 
-#gender = 'Male'
-#name_length = 'Long'
+gender = sys.argv[1]
+name_length = sys.argv[2]
 
 def name_generator(gender,name_length):
 
@@ -119,7 +119,7 @@ def name_generator(gender,name_length):
 
 #####Commented out function call to allow subprocess to call python file with user selected values
 
-name_generator('woman', 'short')
+name_generator('woman', 'long')
 #name_generator(gender, name_length)
 
 #####

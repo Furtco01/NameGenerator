@@ -24,8 +24,8 @@ class Homepage extends React.Component {
             method: 'POST',
             mode: 'cors',
             headers: {
-                'Accept': 'text/plain'
-                //'Accept': 'application/json'
+                //'Accept': 'text/plain',
+                'Accept': 'application/json'
                 //'Content-type': 'application/json'
             },
             body: JSON.stringify({
