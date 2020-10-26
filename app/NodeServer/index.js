@@ -42,15 +42,16 @@ app.post('/post', function(req, res) {
   silent: false,
   stdio: 'pipe'
   });
+
   //Process output from python script and print to console
   /*pythonProcess.stdout.on('res', function(res) {
   var pythonOutput = res.toString();
   res.write(pythonOutput);
   });*/
-  pythonProcess.stdout.pipe(process.stdout, { end: false });
+  pythonOutput = pythonProcess.stdout.pipe(process.stdout, { end: false });
 
-  pythonProcess.on('close', function() {
-    console.log(process.stdout);
+    pythonProcess.on('close', function() {
+      //console.log(process.stdout);
+      res.end(toString(pythonOutput));
   });
 });
-
