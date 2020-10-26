@@ -24,12 +24,12 @@ diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Ba
 
 #initialize gender and name length variables
 
-#gender = sys.argv[1]
-#name_length = sys.argv[2]
+gender = sys.argv[1]
+name_length = sys.argv[2]
 
 def name_generator(gender,name_length):
 
-    if gender == 'man':
+    if gender == 'Male':
         first_name_letter_count = 0
         last_name_letter_count = 0
         first_male_name = ""
@@ -37,7 +37,7 @@ def name_generator(gender,name_length):
         first_name = ""
         last_name = ""
         char_thresh = 3
-        if name_length == 'long':
+        if name_length == 'Long':
             first_male_name = random.choice(diverse_male_first_names)
             last_male_name = random.choice(last_names)
             for x in first_male_name:
@@ -54,7 +54,7 @@ def name_generator(gender,name_length):
                 last_name_letter_count = len(last_male_name)
             if last_name_letter_count >= 4 and last_name_letter_count is not None:
                 last_name = last_male_name
-        elif name_length == 'short':
+        elif name_length == 'Short':
             first_male_name = random.choice(diverse_male_first_names)
             last_male_name = random.choice(last_names)
             for x in first_male_name:
@@ -71,7 +71,7 @@ def name_generator(gender,name_length):
                 last_name_letter_count = len(last_male_name)
             if last_name_letter_count <= 3 and last_name_letter_count is not None:
                 last_name = last_male_name
-    if gender == 'woman':
+    if gender == 'Female':
         first_name_letter_count = 0
         last_name_letter_count = 0
         first_female_name = ""
@@ -79,7 +79,7 @@ def name_generator(gender,name_length):
         first_name = ""
         last_name = ""
         char_thresh = 3
-        if name_length == 'long':
+        if name_length == 'Long':
             first_female_name = random.choice(diverse_female_first_names)
             last_female_name = random.choice(last_names)
             for x in first_female_name:
@@ -97,7 +97,7 @@ def name_generator(gender,name_length):
                 break
             if last_name_letter_count >= 4 and last_name_letter_count is not None:
                 last_name = last_female_name
-        elif name_length == 'short':
+        elif name_length == 'Short':
             first_female_name = random.choice(diverse_female_first_names)
             last_female_name = random.choice(last_names)
             for x in first_female_name:
@@ -115,12 +115,9 @@ def name_generator(gender,name_length):
             if last_name_letter_count <= 3 and last_name_letter_count is not None:
                 last_name = last_female_name
     print(first_name, last_name)
-    #print(sys.argv[1], sys.argv[2])
 
-#####Commented out function call to allow subprocess to call python file with user selected values
-
-name_generator('woman', 'long')
-#name_generator(gender, name_length)
+#####Function call to allow subprocess to call python file with user selected values
+name_generator(gender, name_length)
 
 #####
 #Helper funciton to count items in name arrays

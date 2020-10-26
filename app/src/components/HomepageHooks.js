@@ -20,11 +20,10 @@ class Homepage extends React.Component {
 
     generateName = () => {
         console.log('running function');
-        const myRequest = new Request('http://localhost:4200/get', {
+        const myRequest = new Request('http://localhost:4200/post', {
             method: 'POST',
             mode: 'cors',
             headers: {
-                //'Accept': 'text/plain',
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
@@ -41,18 +40,14 @@ class Homepage extends React.Component {
                 throw Error(`Request rejected with status ${res.status}`);
             }
         })
-        .then(res => res.json())
-        .then(data=>console.log(data));
-        /*.then(function(data) {
-            return data.JSON();
-        })
-        .then(function(data) {
-            console.log(data);
-            document.getElementById('result').innerHTML = `This is your output: ${data}`;
+        .then(res => res.text())
+        .then(function(res) {
+            console.log(res);
+            document.getElementById('result').innerHTML = `Your generated name is: ${res.slice(11,15)} ${res.slice(32,36)}`;
         })
         .catch(function(error) {
             console.log(error);
-        });  */
+        });  
     };
 
     homepageText = {
@@ -60,7 +55,7 @@ class Homepage extends React.Component {
         firstSelection: 'Please select a gender: ',
         secondSelection: 'Please select a length: '
     },
-    resultText: 'NAME GENERATED HERE',
+    resultText: '',
     buttonText: 'Generate Name'
     }
    
