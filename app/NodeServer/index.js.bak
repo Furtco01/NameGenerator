@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 //Define the spawn method used to call a subprocess to run the python script
-const spawnSync = require('child_process').spawnSync;
+const spawn = require('child_process').spawn;
 //Define the body parser methos because JSON is now able to be parsed by default
 const bodyParser = require('body-parser');
 const { stdout } = require('process');
@@ -31,22 +31,31 @@ app.use(function (req, res, next) {
 
 //Define endpoint for POST request using the /post path
 app.post('/post', function(req, res) {
+  res.json(req.body);
   //Declare variables to store toggle input from react interface
   //to be passed as parameters to Python script
-  /// @TODO sanitize inputs prior to giving them to python
   var gender = req.body.gender;
   var name_length = req.body.name_length;
-  const pythonProcess = spawnSync('python', ['-u', './NameGenerator.py', gender, name_length],
+  //Instantiate instance of spawn to call subprocess
+  const pythonProcess = spawn('python', ['-u', '../NameGenerator.py', gender, name_length],
   {
-    encoding: 'utf-8'
+  silent: false,
+  stdio: 'pipe'
   });
-  name_res = pythonProcess.stdout;
 
-  /// @TODO Pre-process/parse data into json format?
-  res.write( name_res );
-  res.end();
+  //Process output from python script and print to console
+  /*pythonProcess.stdout.on('res', function(res) {
+  var pythonOutput = res.toString();
+  res.write(pythonOutput);
+  });*/
+  //pythonOutput = pythonProcess.stdout.pipe(process.stdout, { end: false });
+  pythonProcess.stdout.on('data', (chunk) => {
+      console.log(`Received ${chunk.length} bytes of data.`);
+  });
 
-  /// @TODO perhaps add some "message sent" confirmation
-
+    console.log(process.stdout);
+    pythonProcess.on('close', function() {
+      //console.log(process.stdout);
+      res.end(toString(pythonOutput));
+  });
 });
-
