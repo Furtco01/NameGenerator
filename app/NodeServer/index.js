@@ -1,35 +1,57 @@
+//Define express which powers the http functionality
 const express = require('express');
 const app = express();
+//Define the spawn method used to call a subprocess to run the python script
 const spawn = require('child_process').spawn;
-//const execFile = require('child_process').execFile;
+//Define the body parser methos because JSON is now able to be parsed by default
+const bodyParser = require('body-parser');
+const { stdout } = require('process');
+//Assign a value to port variable for below listener
 const port = 4200;
 
-
+//set listener on port 4200 for incoming http request
 app.listen(port, () => {
   console.log(`Node server listening at http://localhost:${port}`)
 })
 
-//Header for the http request to prevent CORS error
+//Call the bodyParser method
+app.use(bodyParser.json());
+//Declare funtion to set headers for http request
 app.use(function (req, res, next) {
+  //Use res.setHeader (singular header) in place of res.writeHead
+  //(multiple headers) to allow multiple app.use statements
+  //additional headers cannot be added after res.writeHead is called
+
+  //Set header to allow request to bypass CORS protection
   res.setHeader('Access-Control-Allow-Origin', '*');
+  //Set headers to show http post request body
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-//Define endpoint for GET request
+//Define endpoint for POST request using the /post path
+app.post('/post', function(req, res) {
+  res.json(req.body);
+  //Declare variables to store toggle input from react interface
+  //to be passed as parameters to Python script
+  var gender = req.body.gender;
+  var name_length = req.body.name_length;
+  //Instantiate instance of spawn to call subprocess
+  const pythonProcess = spawn('python', ['-u', '../NameGenerator.py', gender, name_length],
+  {
+  silent: false,
+  stdio: 'pipe'
+  });
 
-app.post('/get', function(req, res) {
+  //Process output from python script and print to console
+  /*pythonProcess.stdout.on('res', function(res) {
+  var pythonOutput = res.toString();
+  res.write(pythonOutput);
+  });*/
+  pythonOutput = pythonProcess.stdout.pipe(process.stdout, { end: false });
 
-  //Below are a couple iterations of different variables/conventions I tried to pass for the toggle values
-
-  //var gender = req.body.gender;
-  //var name_length = req.body.name_length;
-  var gender = 'female';
-  var name_length = 'short';
-
-  var pythonProcess = spawn('python',['../NameGenerator.py', gender, name_length]);
-  
-  //const pythonProcess = subprocess.call('python',['../NameGenerator.py']);
-  pythonProcess.stdout.on('data', function(data) {
-  console.log(data.toString());
+    pythonProcess.on('close', function() {
+      //console.log(process.stdout);
+      res.end(toString(pythonOutput));
+  });
 });
-})
