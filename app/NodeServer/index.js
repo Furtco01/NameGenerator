@@ -50,10 +50,3 @@ app.post('/post', function(req, res) {
 
 });
 
-=======
-  name_res = pythonProcess.stdout;
-
-  res.write(name_res);
-  res.end();
-});
->>>>>>> 49ba7b30206d06730a7532342d57eabb2192c1c6
