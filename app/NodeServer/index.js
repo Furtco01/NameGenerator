@@ -2,7 +2,6 @@
 const express = require('express');
 const app = express();
 //Define the spawn method used to call a subprocess to run the python script
-const spawn = require('child_process').spawn;
 const spawnSync = require('child_process').spawnSync;
 //Define the body parser methos because JSON is now able to be parsed by default
 const bodyParser = require('body-parser');
@@ -51,3 +50,10 @@ app.post('/post', function(req, res) {
 
 });
 
+=======
+  name_res = pythonProcess.stdout;
+
+  res.write(name_res);
+  res.end();
+});
+>>>>>>> 49ba7b30206d06730a7532342d57eabb2192c1c6

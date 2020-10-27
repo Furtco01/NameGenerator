@@ -16,6 +16,12 @@ import GenderToggle from './GenderToggle.js';
 import NameToggle from './NameToggle.js';
 import { Button } from '@material-ui/core';
 
+function handleResultString(string) {
+    var re = /'|,|\(|\)/g;
+    var finalName = string.replace(re,'');
+    return finalName;
+};
+
 class Homepage extends React.Component {
 
     generateName = () => {
@@ -43,7 +49,7 @@ class Homepage extends React.Component {
         .then(res => res.text())
         .then(function(res) {
             console.log(res);
-            document.getElementById('result').innerHTML = `Your generated name is: ${res.slice(11,15)} ${res.slice(32,36)}`;
+            document.getElementById('result').innerHTML = `Your name is: ${handleResultString(res)}`;
         })
         .catch(function(error) {
             console.log(error);
