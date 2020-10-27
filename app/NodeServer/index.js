@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 //Define the spawn method used to call a subprocess to run the python script
-const spawn = require('child_process').spawn;
+const spawnSync = require('child_process').spawnSync;
 //Define the body parser methos because JSON is now able to be parsed by default
 const bodyParser = require('body-parser');
 const { stdout } = require('process');
@@ -31,27 +31,18 @@ app.use(function (req, res, next) {
 
 //Define endpoint for POST request using the /post path
 app.post('/post', function(req, res) {
-  res.json(req.body);
   //Declare variables to store toggle input from react interface
   //to be passed as parameters to Python script
   var gender = req.body.gender;
   var name_length = req.body.name_length;
   //Instantiate instance of spawn to call subprocess
-  const pythonProcess = spawn('python', ['-u', '../NameGenerator.py', gender, name_length],
+  const pythonProcess = spawnSync('python', ['-u', '../NameGenerator.py', gender, name_length],
   {
-  silent: false,
-  stdio: 'pipe'
+  encoding: 'utf-8'
   });
 
-  //Process output from python script and print to console
-  /*pythonProcess.stdout.on('res', function(res) {
-  var pythonOutput = res.toString();
-  res.write(pythonOutput);
-  });*/
-  pythonOutput = pythonProcess.stdout.pipe(process.stdout, { end: false });
+  name_res = pythonProcess.stdout;
 
-    pythonProcess.on('close', function() {
-      //console.log(process.stdout);
-      res.end(toString(pythonOutput));
-  });
+  res.write(name_res);
+  res.end();
 });
