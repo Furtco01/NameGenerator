@@ -26,7 +26,7 @@ class App extends React.Component {
   };
 
 handleGenderToggle = () => {
-  if( this.state.gender === 'Male' ) {
+  if( this.state.gender === 'Male') {
       this.setState({gender: 'Female'});
   }
   else if( this.state.gender === 'Female' ) {

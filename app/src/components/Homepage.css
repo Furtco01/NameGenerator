@@ -11,8 +11,8 @@
   overflow: hidden;
 }
 
-.Homepage .Background {
-  color: rgba(74, 73, 118, 0.26);
+.Background {
+  background-color: rgba(74, 73, 118, 0.06);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
