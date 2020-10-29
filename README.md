@@ -17,6 +17,6 @@ commands.
 
 ## Design Docs
 
-[Figma Board](https://www.figma.com/files/project/6960590/Olivin)
+[Figma Board](https://www.figma.com/file/IyOlNgSRIhOdDy1Nu5P06g/Project?node-id=17809%3A131)
 
 ## Project Workflow
