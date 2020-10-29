@@ -7,6 +7,8 @@
 ***********************************************************************/
 
 /**** Application-Wide CSS ****/
+
+/*added margin shift to account for offset of app in viewport*/
 .App {
   margin-top: -8px;
   margin-left: -8px;

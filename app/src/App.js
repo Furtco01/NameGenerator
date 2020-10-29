@@ -8,11 +8,10 @@
 
 @details
   Rev 0.1 - CF - Initial Implementation
-  Rev 0.2 - JH - Revise Routing
 ***********************************************************************/
 
 import React from 'react';
-import Homepage from './components/HomepageHooks.js';
+import Homepage from './components/Homepage.js';
 import './App.css';
 
 class App extends React.Component {

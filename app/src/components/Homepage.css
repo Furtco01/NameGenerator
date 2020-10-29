@@ -6,6 +6,7 @@
   See `Homepage.js` for details.
 ***********************************************************************/
 
+/*this rule set ensures the page doesn't scroll outside of expected bounds*/
 .Homepage {
   position: absolute;
   overflow: hidden;
@@ -16,6 +17,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /*uses vh and vw instead of px for more fleible and responsive unit*/
+  /*one vh and vw is 1% of the viewport of the screen*/
   height: 100vh;
   width: 100vw;
 }

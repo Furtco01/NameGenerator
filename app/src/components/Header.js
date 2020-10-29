@@ -13,6 +13,9 @@ import React from 'react';
 import ColoredLine from './ColoredLine';
 import './Header.css';
 
+//passed props into the Header component to easily update the displayed
+//text in the Homepage component which renders the Header component
+
 const Header = (props) => (
     <div className="Banner">
         <div className="Header">

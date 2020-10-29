@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.js';
 
-// Start our React Application
+// Start our React Application and render App component
 ReactDOM.render(
     <App />,
   document.getElementById('root')

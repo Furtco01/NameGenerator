@@ -1,5 +1,5 @@
 /***********************************************************************
-@file     HomepageHooks.js
+@file     Homepage.js
 @author   Collin Furth
 @date     10/07/2020
 @ver      0.1
