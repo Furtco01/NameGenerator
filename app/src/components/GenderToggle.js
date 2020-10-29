@@ -5,11 +5,12 @@ import { ToggleButtonGroup } from '@material-ui/lab';
 export default function GenderToggle(props) {
   const [alignment, setAlignment] = React.useState('left');
 
-
   const handleAlignment = (event, newAlignment) => {
+    if (newAlignment !== null) {
     setAlignment(newAlignment);
     props.onClick();
-  };
+  }
+};
 
   return (
     <ToggleButtonGroup

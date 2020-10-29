@@ -17,7 +17,7 @@ last_names = ["Nye","Kay","Lee","Doe","Orr","Poe","Sim","Cunningham","Cox","Tan"
 #,Hill,Scott,Green,Adams,Baker,Gonzalez,Nelson,Carter,Mitchell,Perez,Roberts,Turner,Phillips,Campbell,Parker,Evans,Edwards,Collins"]
 
 #Array containing diverse names
-diverse_male_first_names = ["Alasdair", "Kit", "Taj", "Beckett","Eli", "Caspar", "Calvin","Cedric", "Darius", "Jay", "Doutzen", "Emmanuelle", "Van", "Dan","Fin", "Francisco", "Wes", "Giacarlo","Sid", "Ike", "Langley","Lazaro","Leo","Ace","Ari","Higgins"]
+diverse_male_first_names = ["Alasdair", "Kit", "Taj", "Beckett","Eli", "Caspar", "Calvin","Cedric", "Darius", "Jay", "Doutzen", "Emmanuelle", "Van", "Dan","Fin", "Francisco", "Wes", "Giacarlo","Sid", "Ike", "Langley","Lazaro","Leo","Ace","Ari","Schmidty"]
 
 #Array containing diverse names
 diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Bay", "Ada", "Sia","Camilla", "Constance", "Dot", "Bea", "Elektra", "Fay", "Fabiola","Gisele", "Liv", "Nya", "Jemima","Sky", "Lux", "Leela","Lila Grace","Ula","Olympia","Pax","Zoe"]
