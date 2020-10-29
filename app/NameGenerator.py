@@ -91,11 +91,14 @@ def name_generator(gender,name_length):
                 first_name = first_female_name
             for x in last_female_name:
                 last_name_letter_count += 1
-            while(last_name_letter_count <= char_thresh):
-                last_female_name = random.choice(last_names)
-                last_name_letter_count = len(last_female_name)
-                break
-            if last_name_letter_count >= 4 and last_name_letter_count is not None:
+            if last_name_letter_count <= char_thresh:
+                while(last_name_letter_count <= char_thresh):
+                    last_female_name = random.choice(last_names)
+                    last_name_letter_count = len(last_female_name)
+                    if last_name_letter_count >= 4 and last_name_letter_count is not None:
+                        last_name = last_female_name
+                        break
+            else:
                 last_name = last_female_name
         elif name_length == 'Short':
             first_female_name = random.choice(diverse_female_first_names)
