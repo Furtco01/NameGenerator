@@ -1,5 +1,5 @@
 # NameGenerator Project
-This name generator app is a simple project used to create dummy names for UX/UI purposes. React was used to build the front end interface and Python was used for the name generation.
+This name generator app is a simple project used to create dummy names for UX/UI purposes. React was used to build the front end interface and Python was used for the name generation. The content is then served from a Docker container running a node.js image. I set up an Express server to handle the HTTP requests that pass information between the front-end and the back-end.
 
 ## Table of Contents
 1. [Introduction to Docker](#Introduction-to-Docker)
@@ -17,6 +17,6 @@ commands.
 
 ## Design Docs
 
-[Figma Board](https://www.figma.com/files/project/6960590/Olivin)
+[Figma Board](https://www.figma.com/file/IyOlNgSRIhOdDy1Nu5P06g/Project?node-id=17809%3A131)
 
 ## Project Workflow
