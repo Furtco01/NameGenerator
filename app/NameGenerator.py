@@ -5,22 +5,34 @@ import random
 import sys
 
 #Array containing male first names list
-male_first_names = ["James","Jon","Rob","Michael","William","David","Richard","Joseph","Thomas","Charles","Christopher","Dan","Matthew","Anthony","Donald","Mark","Paul","Steven","Andrew","Kenneth","Joshua","Kevin","Brian","George","Edward","Ronald","Tim","Jason","Jeffrey","Ryan","Jacob","Gary"]
+#male_first_names = ["James","Jon","Rob","Michael","William","David","Richard","Joseph","Thomas","Charles","Christopher","Dan","Matthew","Anthony","Donald","Mark","Paul","Steven","Andrew","Kenneth","Joshua","Kevin","Brian","George","Edward","Ronald","Tim","Jason","Jeffrey","Ryan","Jacob","Gary"]
 #,Nicholas,Eric,Jonathan,Stephen,Larry,Justin,Scott,Brandon,Benjamin,Samuel,Frank,Gregory,Raymond,Alexander,Patrick,Jack,Dennis,Jerry"]
 
 #Array containing female first names list
-female_first_names = ["Patricia","Jennifer","Linda","Elizabeth","Barbara","Susan","Jessica","Sarah","Karen","Nancy","Lisa","Margaret","Betty","Sandra","Ashley","Dorothy","Kimberly","Emily","Donna","Michelle","Carol","Amanda","Melissa","Deborah","Stephanie","Rebecca","Laura","Sharon","Cynthia","Kathleen","Amy","Shirley"]
+#female_first_names = ["Patricia","Jennifer","Linda","Elizabeth","Barbara","Susan","Jessica","Sarah","Karen","Nancy","Lisa","Margaret","Betty","Sandra","Ashley","Dorothy","Kimberly","Emily","Donna","Michelle","Carol","Amanda","Melissa","Deborah","Stephanie","Rebecca","Laura","Sharon","Cynthia","Kathleen","Amy","Shirley"]
 #,Angel,Helen,Anna,Brenda,Pamela,Nicole,Samantha,Katherine,Emma,Ruth,Christine,Catherine,Debra,Rachel,Carolyn,Janet,Virginia"]
 
 #Array containing last names
-last_names = ["Nye","Kay","Lee","Doe","Orr","Poe","Sim","Cunningham","Cox","Tan","Anderson","Nguyen","Jackson","Art","Yaegermanjensen","Martin","Thompson","Day","Martinez","Robinson","Ono","Rodriguez","Lewis","Lee","Walker","Hall","Fox","Young","Hernandez","Ali","Wright","Ray"]
-#,Hill,Scott,Green,Adams,Baker,Gonzalez,Nelson,Carter,Mitchell,Perez,Roberts,Turner,Phillips,Campbell,Parker,Evans,Edwards,Collins"]
+last_names = ["Nye","Kay","Lee","Doe","Orr","Poe","Sim","Cunningham","Cox","Tan","Anderson",
+              "Nguyen","Jackson","Art","Yaegermanjensen","Martin","Thompson","Day","Martinez",
+              "Robinson","Ono","Rodriguez","Lewis","Lee","Walker","Hall","Fox","Young","Hernandez",
+              "Ali","Wright","Ray", "Ash","Gonzalez","Bai", "Nelson","Law","Mitchell","Coy","Turner",
+              "Dam","Collins"]
+#,Hill,Scott,Green,Adams,Baker,Carter,Perez,Roberts,Turner,Phillips,Campbell,Parker,Evans,Edwards]
 
 #Array containing diverse names
-diverse_male_first_names = ["Alasdair", "Kit", "Taj", "Beckett","Eli", "Caspar", "Calvin","Cedric", "Darius", "Jay", "Doutzen", "Emmanuelle", "Van", "Dan","Fin", "Francisco", "Wes", "Giacarlo","Sid", "Ike", "Langley","Lazaro","Leo","Ace","Ari","Schmidty"]
+diverse_male_first_names = ["Alasdair", "Kit", "Taj", "Beckett","Eli", "Caspar", "Calvin","Cedric",
+                            "Darius", "Jay", "Doutzen", "Emmanuelle", "Van", "Dan","Fin", "Francisco",
+                            "Wes", "Giancarlo","Sid", "Ike", "Langley","Lazaro","Leo","Ace","Ari",
+                            "Schmidty", "Huy","Angel","Cam","Pablo","Ira","Christoff","Gus","Samuel",
+                            "Jax","Robert"]
 
 #Array containing diverse names
-diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Bay", "Ada", "Sia","Camilla", "Constance", "Dot", "Bea", "Elektra", "Fay", "Fabiola","Gisele", "Liv", "Nya", "Jemima","Sky", "Lux", "Leela","Lila Grace","Ula","Olympia","Pax","Zoe"]
+diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Bay", "Ada", "Sia",
+                              "Camilla","Constance", "Dot", "Bea", "Elektra", "Fay", "Fabiola","Gisele",
+                               "Liv", "Nya","Jemima","Sky", "Lux", "Leela","Lila Grace","Ula","Olympia",
+                               "Pax","Zoe","Aja","Pamela","Bev","Brenda","Gia","Ruth","Isa","Virginia",
+                               "Lyn","Helen"]
 
 #initialize gender and name length variables
 
