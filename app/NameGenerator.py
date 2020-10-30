@@ -36,104 +36,116 @@ diverse_female_first_names = ["Alessandra", "Allegra", "Arizona", "Brooklyn","Ba
 
 #initialize gender and name length variables
 
-#gender = sys.argv[1]
-#name_length = sys.argv[2]
+gender = sys.argv[1]
+name_length = sys.argv[2]
 
 def name_generator(gender,name_length):
-
     if gender == 'Male':
-        first_name_letter_count = 0
-        last_name_letter_count = 0
-        first_male_name = ""
-        last_male_name = ""
-        first_name = ""
-        last_name = ""
-        char_thresh = 3
         if name_length == 'Long':
-            first_male_name = random.choice(diverse_male_first_names)
-            last_male_name = random.choice(last_names)
-            for x in first_male_name:
-                first_name_letter_count += 1
-            while(first_name_letter_count <= char_thresh and first_name_letter_count is not None):
+            def letter_counter():
                 first_male_name = random.choice(diverse_male_first_names)
-                first_name_letter_count = len(first_male_name)
-            if first_name_letter_count >= 4 and first_name_letter_count is not None:
-                first_name = first_male_name
-            for x in last_male_name:
-                last_name_letter_count += 1
-            while(last_name_letter_count <= char_thresh and first_name_letter_count is not None):
                 last_male_name = random.choice(last_names)
-                last_name_letter_count = len(last_male_name)
-            if last_name_letter_count >= 4 and last_name_letter_count is not None:
-                last_name = last_male_name
+                first_name_letter_count = 0
+                last_name_letter_count = 0
+                first_name = ""
+                last_name = ""
+                char_thresh = 3
+                for x in first_male_name:
+                    first_name_letter_count += 1
+                while(first_name_letter_count <= char_thresh and first_name_letter_count is not None):
+                    first_male_name = random.choice(diverse_male_first_names)
+                    first_name_letter_count = len(first_male_name)
+                if first_name_letter_count >= 4 and first_name_letter_count is not None:
+                    first_name = first_male_name
+                for x in last_male_name:
+                    last_name_letter_count += 1
+                while(last_name_letter_count <= char_thresh and first_name_letter_count is not None):
+                    last_male_name = random.choice(last_names)
+                    last_name_letter_count = len(last_male_name)
+                if last_name_letter_count >= 4 and last_name_letter_count is not None:
+                    last_name = last_male_name
+                    print(first_name, last_name)
+            return letter_counter()
         elif name_length == 'Short':
-            first_male_name = random.choice(diverse_male_first_names)
-            last_male_name = random.choice(last_names)
-            for x in first_male_name:
-                first_name_letter_count += 1
-            while(first_name_letter_count > char_thresh):
+            def letter_counter():
                 first_male_name = random.choice(diverse_male_first_names)
-                first_name_letter_count = len(first_male_name)
-            if first_name_letter_count <= 3 and first_name_letter_count is not None:
-                first_name = first_male_name
-            for x in last_male_name:
-                last_name_letter_count += 1
-            while(last_name_letter_count > char_thresh):
                 last_male_name = random.choice(last_names)
-                last_name_letter_count = len(last_male_name)
-            if last_name_letter_count <= 3 and last_name_letter_count is not None:
-                last_name = last_male_name
+                first_name_letter_count = 0
+                last_name_letter_count = 0
+                first_name = ""
+                last_name = ""
+                char_thresh = 3
+                for x in first_male_name:
+                    first_name_letter_count += 1
+                while(first_name_letter_count > char_thresh):
+                    first_male_name = random.choice(diverse_male_first_names)
+                    first_name_letter_count = len(first_male_name)
+                if first_name_letter_count <= 3 and first_name_letter_count is not None:
+                    first_name = first_male_name
+                for x in last_male_name:
+                    last_name_letter_count += 1
+                while(last_name_letter_count > char_thresh):
+                    last_male_name = random.choice(last_names)
+                    last_name_letter_count = len(last_male_name)
+                if last_name_letter_count <= 3 and last_name_letter_count is not None:
+                    last_name = last_male_name
+                    print(first_name, last_name)
+            return letter_counter()
     if gender == 'Female':
-        first_name_letter_count = 0
-        last_name_letter_count = 0
-        first_female_name = ""
-        last_female_name = ""
-        first_name = ""
-        last_name = ""
-        char_thresh = 3
         if name_length == 'Long':
-            first_female_name = random.choice(diverse_female_first_names)
-            last_female_name = random.choice(last_names)
-            for x in first_female_name:
-                first_name_letter_count += 1
-            while(first_name_letter_count <= char_thresh):
+            def letter_counter():
                 first_female_name = random.choice(diverse_female_first_names)
-                first_name_letter_count = len(first_female_name)
-            if first_name_letter_count >= 4 and first_name_letter_count is not None:
-                first_name = first_female_name
-            for x in last_female_name:
-                last_name_letter_count += 1
-            if last_name_letter_count <= char_thresh:
-                while(last_name_letter_count <= char_thresh):
+                last_female_name = random.choice(last_names)
+                first_name_letter_count = 0
+                last_name_letter_count = 0
+                first_name = ""
+                last_name = ""
+                char_thresh = 3
+                for x in first_female_name:
+                    first_name_letter_count += 1
+                while(first_name_letter_count <= char_thresh):
+                    first_female_name = random.choice(diverse_female_first_names)
+                    first_name_letter_count = len(first_female_name)
+                if first_name_letter_count >= 4 and first_name_letter_count is not None:
+                    first_name = first_female_name
+                for x in last_female_name:
+                    last_name_letter_count += 1
+                while(last_name_letter_count <= char_thresh and first_name_letter_count is not None):
                     last_female_name = random.choice(last_names)
                     last_name_letter_count = len(last_female_name)
-                    if last_name_letter_count >= 4 and last_name_letter_count is not None:
-                        last_name = last_female_name
-                        break
-            else:
-                last_name = last_female_name
+                if last_name_letter_count >= 4 and last_name_letter_count is not None:
+                    last_name = last_female_name
+                    print(first_name, last_name)
+            return letter_counter()
         elif name_length == 'Short':
-            first_female_name = random.choice(diverse_female_first_names)
-            last_female_name = random.choice(last_names)
-            for x in first_female_name:
-                first_name_letter_count += 1
-            while(first_name_letter_count > char_thresh and first_name_letter_count is not None):
+            def letter_counter():
                 first_female_name = random.choice(diverse_female_first_names)
-                first_name_letter_count = len(first_female_name)
-            if first_name_letter_count <= 3 and first_name_letter_count is not None:
-                first_name = first_female_name
-            for x in last_female_name:
-                last_name_letter_count += 1
-            while(last_name_letter_count > char_thresh and first_name_letter_count is not None):
                 last_female_name = random.choice(last_names)
-                last_name_letter_count = len(last_female_name)
-            if last_name_letter_count <= 3 and last_name_letter_count is not None:
-                last_name = last_female_name
-    print(first_name, last_name)
+                first_name_letter_count = 0
+                last_name_letter_count = 0
+                first_name = ""
+                last_name = ""
+                char_thresh = 3
+                for x in first_female_name:
+                    first_name_letter_count += 1
+                while(first_name_letter_count > char_thresh and first_name_letter_count is not None):
+                    first_female_name = random.choice(diverse_female_first_names)
+                    first_name_letter_count = len(first_female_name)
+                if first_name_letter_count <= 3 and first_name_letter_count is not None:
+                    first_name = first_female_name
+                for x in last_female_name:
+                    last_name_letter_count += 1
+                while(last_name_letter_count > char_thresh and last_name_letter_count is not None):
+                    last_female_name = random.choice(last_names)
+                    last_name_letter_count = len(last_female_name)
+                if last_name_letter_count <= 3 and last_name_letter_count is not None:
+                    last_name = last_female_name
+                    print(first_name, last_name)
+            return letter_counter()
 
 #####Function call to allow subprocess to call python file with user selected values
 name_generator(gender, name_length)
-
+#name_generator('Female', 'Long')
 #####
 #Helper funciton to count items in name arrays
 #####
