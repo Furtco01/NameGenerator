@@ -21,7 +21,7 @@ class App extends React.Component {
     this.state = {
       gender: 'Male',
       name_length: 'Long'
-  };
+    };
   };
 
 handleGenderToggle = () => {

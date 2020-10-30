@@ -13,6 +13,7 @@ import sys
 #,Angel,Helen,Anna,Brenda,Pamela,Nicole,Samantha,Katherine,Emma,Ruth,Christine,Catherine,Debra,Rachel,Carolyn,Janet,Virginia"]
 
 #Array containing last names
+
 last_names = ["Nye","Kay","Lee","Doe","Orr","Poe","Sim","Cunningham","Cox","Tan","Anderson",
               "Nguyen","Jackson","Art","Yaegermanjensen","Martin","Thompson","Day","Martinez",
               "Robinson","Ono","Rodriguez","Lewis","Lee","Walker","Hall","Fox","Young","Hernandez",
@@ -133,6 +134,7 @@ def name_generator(gender,name_length):
 
 #####Function call to allow subprocess to call python file with user selected values
 name_generator(gender, name_length)
+#name_generator('Female', 'Long')
 
 #####
 #Helper funciton to count items in name arrays

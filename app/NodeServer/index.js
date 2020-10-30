@@ -36,7 +36,7 @@ app.post('/post', function(req, res) {
   /// @TODO sanitize inputs prior to giving them to python
   var gender = req.body.gender;
   var name_length = req.body.name_length;
-  const pythonProcess = spawnSync('python', ['-u', './NameGenerator.py', gender, name_length],
+  const pythonProcess = spawnSync('python', ['../NameGenerator.py', gender, name_length],
   {
     encoding: 'utf-8'
   });
@@ -44,6 +44,7 @@ app.post('/post', function(req, res) {
 
   /// @TODO Pre-process/parse data into json format?
   res.write( name_res );
+  console.log(name_res);
   res.end();
 
   /// @TODO perhaps add some "message sent" confirmation

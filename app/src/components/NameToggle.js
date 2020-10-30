@@ -1,5 +1,5 @@
 import React from 'react';
-import { TimelineSeparator, ToggleButton } from '@material-ui/lab';
+import { ToggleButton } from '@material-ui/lab';
 import { ToggleButtonGroup } from '@material-ui/lab';
 
 //export default function for material ui toggle component
@@ -18,7 +18,6 @@ export default function NameToggle(props) {
       props.onClick();
     }
   };
-
 
   return (
     <ToggleButtonGroup
