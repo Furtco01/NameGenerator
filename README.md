@@ -21,9 +21,9 @@ commands.
 
 ## Requirements
 
-#### Docker
-#### python3
-#### Lib/random.py
-#### sys module
-#### Node.js
-#### React Framework (create-react-app)
+* Docker
+* python3
+* Lib/random.py
+* sys module
+* Node.js
+* React Framework (create-react-app)
