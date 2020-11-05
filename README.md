@@ -19,4 +19,11 @@ commands.
 
 [Figma Board](https://www.figma.com/file/IyOlNgSRIhOdDy1Nu5P06g/Project?node-id=17809%3A131)
 
-## Project Workflow
+## Requirements
+
+#### Docker
+#### python3
+#### Lib/random.py
+#### sys module
+#### Node.js
+#### React Framework (create-react-app)
